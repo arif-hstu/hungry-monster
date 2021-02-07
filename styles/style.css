@@ -23,10 +23,13 @@ body {
     font-family: 'Roboto', sans-serif;
     padding: 20px;
 }
+
 .nav-bar a:focus {
     outline: none;
 }
+/* end of head section */
 
+/* search section */
 .search {
     display: flex;
     justify-content: center;
@@ -99,19 +102,13 @@ h1 {
     background-color: #fff;
 }
 
-.mode {
-    background-color: #fff;
-}
-
 .head>div {
     margin: 0px 5%;
     display: flex;
     justify-content: space-between;
 }
 
-/* style of main seciton */
-
-
+/*main section */
 .container {
     margin: 5% 5%;
     display: grid;
@@ -160,7 +157,6 @@ h1 {
     margin: auto;
     text-align: left;
 }
-
 
 .details-holder .details-card h2{
     font-weight: bolder;    
@@ -211,3 +207,4 @@ h1 {
     text-align: left;
     padding: 0px 20px;
 }
+/* end of main section */

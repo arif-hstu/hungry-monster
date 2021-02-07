@@ -1,7 +1,6 @@
 
-// search meal
+// function to search meal
 const searchMeal = () => {
-
     // select html element by Id name
     const cardHolder = idSelector('card-holder');
     const detailsHolder = idSelector('details-holder');
@@ -20,32 +19,31 @@ const searchMeal = () => {
     } else {
         // clear previous searched items and information
         cardHolder.innerHTML = '';
-        detailsHolder.innerHTML ='';      
+        detailsHolder.innerHTML = '';
 
         // fetch data from themealdb.com
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchedMeal}`)
             .then(res => res.json())
             .then(data => {
                 const mealsArray = data.meals;
-                
+
                 // check if the input is not valid
-                if (mealsArray === null){
+                if (mealsArray === null) {
                     cardHolder.innerHTML = "";
                     detailsHolder.innerHTML = `
                     <div id='warning'>
                     <h6> Please Input a VALID Name of Your Favourite Meal! </h6>
                     </div>
                     `;
-                
-                // if the input is valid
+
+                    // if the input is valid
                 } else {
                     mealsArray.forEach(meal => {
                         createHtmlElement(meal);
                     });
                 }
-
             })
-        
+
         // call the function to display the details of the clicked item
         displayDetails(searchedMeal);
     }
@@ -77,38 +75,40 @@ const createHtmlElement = meal => {
 
 // function to display details in card
 const displayDetails = (searchedMeal) => {
-    
     // select the html elements by Id 
     const inputGroup = idSelector('input-group');
     const cardHolder = idSelector('card-holder');
 
     // add click event listener to the cards of meals
-    cardHolder.addEventListener('click', function(event){
+    cardHolder.addEventListener('click', function (event) {
+
         // clear the div with card-holder class name
         cardHolder.innerHTML = '';
+        
         // hide the search option
         inputGroup.style.display = 'none';
-
-        // const cards = document.querySelectorAll('.card');
+        
         // target the clicked element by event bubble
         const mealName = event.target.parentNode.children[1].innerHTML;
+        
         // convert the targeted meal name into URI object
         const convertedMealName = encodeURI(mealName);
+        
         // call the function getDetails to find the details info
         getDetails(convertedMealName);
 
     })
-    
-    
+
+
     const getDetails = (convertedMealName) => {
         // fetch the data from themealdb.com with the specific meal name
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${convertedMealName}`)
-        .then(res => res.json())
-        .then(data => {
-            const mealsArray = data.meals;
-            const meal = mealsArray[0];
-            createDetails(meal);
-        })
+            .then(res => res.json())
+            .then(data => {
+                const mealsArray = data.meals;
+                const meal = mealsArray[0];
+                createDetails(meal);
+            })
     }
 
     // function to create details information of the clicked item
@@ -121,7 +121,7 @@ const displayDetails = (searchedMeal) => {
 
         // clear previous info
         detailsHolder.innerHTML = '';
-        
+
         // create new element with details
         const card = document.createElement('div');
         card.className = 'details-card';
@@ -155,7 +155,7 @@ const displayDetails = (searchedMeal) => {
             <button onclick='window.location.reload();' type='button'>Search Again
             </button>
             `;
-    
+
         card.innerHTML = cardInfo;
         detailsHolder.appendChild(card);
 
@@ -165,18 +165,18 @@ const displayDetails = (searchedMeal) => {
 
         // select html element by Id
         const ingredient = idSelector('ingredient');
-        
+
         // remove the specific li with empty string 
         for (let i = 0; i < liList.length; i++) {
             const li = liList[i];
 
-        // if the ingredient's string from the api is empty
-        if (li.innerText.length < 2){
-            li.innerText = '';
-            console.log(li.innerText)
-            } 
+            // if the ingredient's string from the api is empty
+            if (li.innerText.length < 2) {
+                li.innerText = '';
+                console.log(li.innerText)
+            }
         }
-         
+
     }
 
 }

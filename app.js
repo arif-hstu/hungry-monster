@@ -84,7 +84,10 @@ const displayDetails = (searchedMeal) => {
 
     const createDetails = meal => {
 
-        const cardHolder = document.getElementById('details-holder');
+        const detailsHolder = document.getElementById('details-holder');
+
+        // clear previous info
+        detailsHolder.innerHTML = '';
     
         const card = document.createElement('div');
         card.className = 'details-card';
@@ -124,7 +127,7 @@ const displayDetails = (searchedMeal) => {
         
        
         card.innerHTML = cardInfo;
-        cardHolder.appendChild(card);
+        detailsHolder.appendChild(card);
 
         const ul = document.querySelector('ul');
         const liList = document.querySelectorAll('li');

@@ -176,9 +176,7 @@ const displayDetails = (searchedMeal) => {
                 console.log(li.innerText)
             }
         }
-
     }
-
 }
 
 // function to reload window when necessary

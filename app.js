@@ -13,7 +13,7 @@ const searchMeal = () => {
         cardHolder.innerHTML = "";
         detailsHolder.innerHTML = `
         <div id='info'>
-        <h6> Please Input the Name of Your Favorite Meal! </h6>
+        <h6> Please Input the Name of Your Favourite Meal! </h6>
         </div>
         `;
     } else {

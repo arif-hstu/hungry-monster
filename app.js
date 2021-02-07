@@ -1,7 +1,7 @@
 
 // function to search meal
 const searchMeal = () => {
-    // select html element by Id name
+    // select html element by Id 
     const cardHolder = idSelector('card-holder');
     const detailsHolder = idSelector('details-holder');
     const inputMeal = idSelector('input-meal');
@@ -13,7 +13,7 @@ const searchMeal = () => {
         cardHolder.innerHTML = "";
         detailsHolder.innerHTML = `
         <div id='info'>
-        <h6> Please Input the Name of Your Favourite Meal! </h6>
+        <h6> Please Input the Name of Your Favorite Meal! </h6>
         </div>
         `;
     } else {

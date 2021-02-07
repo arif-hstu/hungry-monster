@@ -1,20 +1,36 @@
 const searchMeal = () => {
-    
-    const searchedMeal = idSelector('input-meal').value;
-    // remove previous searched items
+
     const cardHolder = idSelector('card-holder');
-    cardHolder.innerHTML = "";
+    const detailsHolder = idSelector('details-holder');
+    const searchedMeal = idSelector('input-meal').value;
 
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchedMeal}`)
-        .then(res => res.json())
-        .then(data => {
-            const mealsArray = data.meals;
-            mealsArray.forEach(meal => {
-                createHtmlElement(meal);
-            });
-        })
+    if (searchedMeal === '') {
+        cardHolder.innerHTML = "";
+        detailsHolder.innerHTML = `
+        <div id='warning'>
+        <h6> Please Input the Name of Your Favourite Meal! </h6>
+        </div>
+        `;
+    } else {
+            // remove previous searched items
 
-    displayDetails(searchedMeal);
+        cardHolder.innerHTML = '';
+        detailsHolder.innerHTML ='';
+
+        
+
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchedMeal}`)
+            .then(res => res.json())
+            .then(data => {
+                const mealsArray = data.meals;
+                mealsArray.forEach(meal => {
+                    createHtmlElement(meal);
+                });
+            })
+
+        displayDetails(searchedMeal);
+    }
+
 }
 
 const idSelector = id => {
@@ -33,6 +49,10 @@ const createHtmlElement = meal => {
         `;
     card.innerHTML = cardInfo;
     cardHolder.appendChild(card);
+}
+
+const reloadWindow = () => {
+    window.location.reload();
 }
 
 const displayDetails = (searchedMeal) => {

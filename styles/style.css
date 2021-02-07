@@ -2,29 +2,101 @@ body {
     background-color: #fff;
     color: #1E1E1E;
     margin: auto;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-
-
-.main .form-holder form {
-    text-align: center;
+/* head section */
+.head {
+    display: flex;
+    justify-content: space-between;
 }
 
-.main .form-holder form .input-group{
+.logo-holder img {
+    cursor: pointer;
+}
+
+.nav-bar a{
+    font-size: 16px;
+    color: #383838;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+}
+.nav-bar a:focus {
+    outline: none;
+}
+
+.search {
     display: flex;
     justify-content: center;
+    margin-top: 3%;
+}
+
+.search .form-holder {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.search .form-holder form .input-group{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    text-align: left;
+}
+
+.search .form-holder form .input-group img {
+    position: absolute;
+    align-self: center;
+    padding-left: 3%;
+}
+
+.search .form-holder form input {
+    height: 40px;
+    width: 600px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    background-color: #F8F7F5;
+    padding-left: 15%;
+    color: #666666;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.search .form-holder form button {
+    height: 42px;
+    width: 100px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: #F06C4E;
+    color: #fff;
+}
+
+.input-group:focus, .input-group:hover {
+    outline: none;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    cursor: pointer;
+}
+
+input:focus, button:focus {
+    outline: none;
 }
 
 h1 {
     font-weight: 400;
 }
 
-.head {
+.search {
     width: 100%;
     height: 3%;
     background-color: #fff;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .mode {
@@ -38,6 +110,8 @@ h1 {
 }
 
 /* style of main seciton */
+
+
 .container {
     margin: 5% 5%;
     display: grid;
@@ -45,13 +119,23 @@ h1 {
     grid-gap: 15px;
     grid-column-gap: 5%;
     grid-row-gap: 70px;
-
 }
 
 .details-holder {
-    margin: 0% 20%;
+    margin: -10% 20%;
     text-align: center;
-    
+    padding-bottom: 10%;   
+}
+
+#warning {
+    margin-top: 20%;;
+}
+
+#warning h6 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #969696;
 }
 
 .details-holder img{
@@ -86,10 +170,20 @@ h1 {
 
 }
 
+.details-holder .details-card button {
+    height: 42px;
+    width: 130px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F06C4E;
+    color: #fff;
+
+}
+
 .container .card {
     background-color: #eeeeee;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .container .card:hover {
@@ -99,7 +193,7 @@ h1 {
 
 .container .card img {
     width: 100%;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 8px 8px 0px 0px;
 }
 
 .container .meal-details {

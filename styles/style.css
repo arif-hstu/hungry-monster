@@ -62,9 +62,13 @@ h1 {
 
 .details-holder .details-card{
     width: 50%;
-    background-color: tomato;
     margin: auto;
-    padding: 5%;
+    text-align: left;
+}
+
+.details-holder .details-card ul{
+    list-style-type: none;
+    padding: 0;
 }
 
 .container .card {

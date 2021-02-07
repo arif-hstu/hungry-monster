@@ -68,14 +68,54 @@ const displayDetails = (searchedMeal) => {
     
         const card = document.createElement('div');
         card.className = 'details-card';
+
         const cardInfo = `
             <img src='${meal.strMealThumb}'>
-            <h3>${meal.strMeal}</h2>
-            <button onclick='window.location.reload();' type='button'>Button
+            <h2>${meal.strMeal}</h2>
+            <h4>Ingredients</h4>
+            <br>
+            <ul>
+                <li>☑ ${meal.strIngredient1}<li>
+                <li>☑ ${meal.strIngredient2}<li>
+                <li>☑ ${meal.strIngredient3}<li>
+                <li>☑ ${meal.strIngredient4}<li>
+                <li>☑ ${meal.strIngredient5}<li>
+                <li>☑ ${meal.strIngredient6}<li>
+                <li>☑ ${meal.strIngredient7}<li>
+                <li>☑ ${meal.strIngredient8}<li>
+                <li>☑ ${meal.strIngredient9}<li>
+                <li>☑ ${meal.strIngredient10}<li>
+                <li>☑ ${meal.strIngredient11}<li>
+                <li>☑ ${meal.strIngredient12}<li>
+                <li>☑ ${meal.strIngredient13}<li>
+                <li>☑ ${meal.strIngredient14}<li>
+                <li>☑ ${meal.strIngredient15}<li>
+                <li>☑ ${meal.strIngredient16}<li>
+                <li>☑ ${meal.strIngredient17}<li>
+                <li>☑ ${meal.strIngredient18}<li>
+                <li>☑ ${meal.strIngredient19}<li>
+                <li>☑ ${meal.strIngredient20}<li>
+            </ul>
+            <button onclick='window.location.reload();' type='button'>Search Again
             </button>
             `;
+        
+       
         card.innerHTML = cardInfo;
         cardHolder.appendChild(card);
+
+        const ul = document.querySelector('ul');
+        const liList = document.querySelectorAll('li');
+        for (let i = 0; i < liList.length; i++) {
+            const li = liList[i];
+
+
+            
+             if (li.innerText.length < 3){
+                li.innerText = '';
+            } 
+        }
+         
     }
 
 }

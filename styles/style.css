@@ -5,6 +5,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+
+
 .main .form-holder form {
     text-align: center;
 }
@@ -46,17 +48,41 @@ h1 {
 
 }
 
+.details-holder {
+    margin: 0% 20%;
+    text-align: center;
+    
+}
+
+.details-holder img{
+    width: 100%;
+    border-radius: 2%;  
+    
+}
+
+.details-holder .details-card{
+    width: 50%;
+    background-color: tomato;
+    margin: auto;
+    padding: 5%;
+}
+
 .container .card {
     background-color: #2B3743;
     text-align: center;
     border-radius: 5px;
 }
 
+.container .card:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 .container .card img {
     width: 100%;
 }
 
-.container .country-details {
+.container .meal-details {
     text-align: left;
     padding: 0px 20px;
 }

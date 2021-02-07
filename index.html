@@ -26,7 +26,7 @@
                 <h1>Discover The World</h1>
             </div>
             <div class="mode">
-                <h1 onclick="changeTheme()" id="mode">Change mode</h1>
+                <h1>Change mode</h1>
             </div>
         </div>
     </section>
@@ -36,18 +36,18 @@
     <section class="main">
         <div class="form-holder">
             <form>
-                <div class="input-group">
+                <div id="input-group" class="input-group">
                     <input id="input-meal" type="text" class="form-control" placeholder="Search for meal..."
-                        value="">
+                        value="pie">
                     <div class="input-group-append">
-                        <button id="search" onclick="eventHandler()" type="text" class="btn btn-danger">Search</button>
+                        <button id="search" onclick="searchMeal()" type="button">Search</button>
                     </div>               
                 </div>
             </form>
         </div>
         <div id="card-holder" class="container">
         </div>
-
+        <div id="details-holder" class="details-holder"></div>
     </section>
     <!-- end main section -->
 

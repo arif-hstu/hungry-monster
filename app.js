@@ -69,32 +69,34 @@ const displayDetails = (searchedMeal) => {
         const card = document.createElement('div');
         card.className = 'details-card';
 
+        // import icon
+        const icon = `<img src='icons/box-tick.svg'>`;
+
         const cardInfo = `
             <img src='${meal.strMealThumb}'>
             <h2>${meal.strMeal}</h2>
-            <h4>Ingredients</h4>
-            <br>
+            <h3>Ingredients</h3>
             <ul>
-                <li>☑ ${meal.strIngredient1}<li>
-                <li>☑ ${meal.strIngredient2}<li>
-                <li>☑ ${meal.strIngredient3}<li>
-                <li>☑ ${meal.strIngredient4}<li>
-                <li>☑ ${meal.strIngredient5}<li>
-                <li>☑ ${meal.strIngredient6}<li>
-                <li>☑ ${meal.strIngredient7}<li>
-                <li>☑ ${meal.strIngredient8}<li>
-                <li>☑ ${meal.strIngredient9}<li>
-                <li>☑ ${meal.strIngredient10}<li>
-                <li>☑ ${meal.strIngredient11}<li>
-                <li>☑ ${meal.strIngredient12}<li>
-                <li>☑ ${meal.strIngredient13}<li>
-                <li>☑ ${meal.strIngredient14}<li>
-                <li>☑ ${meal.strIngredient15}<li>
-                <li>☑ ${meal.strIngredient16}<li>
-                <li>☑ ${meal.strIngredient17}<li>
-                <li>☑ ${meal.strIngredient18}<li>
-                <li>☑ ${meal.strIngredient19}<li>
-                <li>☑ ${meal.strIngredient20}<li>
+                <li>${icon} ${meal.strIngredient1}<li>
+                <li>${icon} ${meal.strIngredient2}<li>
+                <li>${icon} ${meal.strIngredient3}<li>
+                <li>${icon} ${meal.strIngredient4}<li>
+                <li>${icon} ${meal.strIngredient5}<li>
+                <li>${icon} ${meal.strIngredient6}<li>
+                <li>${icon} ${meal.strIngredient7}<li>
+                <li>${icon} ${meal.strIngredient8}<li>
+                <li>${icon} ${meal.strIngredient9}<li>
+                <li>${icon} ${meal.strIngredient10}<li>
+                <li>${icon} ${meal.strIngredient11}<li>
+                <li>${icon} ${meal.strIngredient12}<li>
+                <li>${icon} ${meal.strIngredient13}<li>
+                <li>${icon} ${meal.strIngredient14}<li>
+                <li>${icon} ${meal.strIngredient15}<li>
+                <li>${icon} ${meal.strIngredient16}<li>
+                <li>${icon} ${meal.strIngredient17}<li>
+                <li>${icon} ${meal.strIngredient18}<li>
+                <li>${icon} ${meal.strIngredient19}<li>
+                <li>${icon} ${meal.strIngredient20}<li>
             </ul>
             <button onclick='window.location.reload();' type='button'>Search Again
             </button>
